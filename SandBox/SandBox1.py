@@ -3,6 +3,7 @@ import os
 import datetime
 import time
 import html
+import random
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -33,3 +34,7 @@ import html
 #     print('Recover.')
 # else:
 #     print('Work, work, work.')
+
+# print(random.randint(1, 10))  # Печать случайного числа в диапазоне 1-10 (Библиотека Random)
+# time.sleep(10)  # Задержка 10 секунд (Библиотека Time)
+# print(random.randint(1, 10))
