@@ -5,6 +5,9 @@ for letter in word:
     if letter in vowel:
         if letter not in founded:
             founded.append(letter)
-            # print(len(founded))  # help to count numbers of correct letter
-for perem in founded:  # Тупо перебор элементов массива найденных уникальных гласных
-    print(perem)
+            # print(len(founded))  # help to count number of correct letters
+if len(founded) > 0:
+    for perem in founded:  # Тупо перебор элементов массива найденных уникальных гласных
+        print(perem)
+else:
+    print("Ti che ? ohuel bez glasnih slova pechatat`?")
