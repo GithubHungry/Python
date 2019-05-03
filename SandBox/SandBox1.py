@@ -17,11 +17,11 @@ import random
 # print(datetime.date.today().year)  # Выводит текущую дату[Год] (Библиотека datetime)
 # print(datetime.date.isoformat(datetime.datetime.today()))# Вывод в формате YYYY-MM-DD [Текущая дата в виде строки?](Библиотека datetime)
 
-#print(time.strftime("%I:%M"))  # Выводит текущее время [%I - в часах, %M - в минутах] в 12-часовом формате(Библиотека time)
-#print(time.strftime("%a %p"))  # Выводит день недели и часть дня [%A - день недели %p - am или pm] (Библиотека time)
+# print(time.strftime("%I:%M"))  # Выводит текущее время [%I - в часах, %M - в минутах] в 12-часовом формате(Библиотека time)
+# print(time.strftime("%a %p"))  # Выводит день недели и часть дня [%A - день недели %p - am или pm] (Библиотека time)
 
-#print(html.escape("This HTML contains a &alt;script&gt;script&lt;/script&gt; tag."))  # Преобразование разметки в экранированный текст
-#print(html.unescape("I &hearts; Pyt hon's &lt;standart library&gt;."))  # и обратно
+# print(html.escape("This HTML contains a &alt;script&gt;script&lt;/script&gt; tag."))  # Преобразование разметки в экранированный текст
+# print(html.unescape("I &hearts; Pyt hon's &lt;standart library&gt;."))  # и обратно
 
 # today = 'Saturday'  # Работа с циклом if-elif-else
 # condition = 'normal'
@@ -40,3 +40,17 @@ import random
 # print(random.randint(1, 10))
 
 # print('Привет')  # Проверка русской кодировки
+
+# hello = 'hello'  # Проба списков
+# world = ['world']
+# spis = [hello, world]
+# print(spis)
+# print(hello) # чтобы нормально было надо выводить через for-цикл
+# sp = [[1, 2, 3], [1, 1, 1], ['a'], ['b'], ['c']]
+# print(sp)
+
+# volwes = ['a', 'o', 'i', 'e', 'u', 'y']  # Поиск гласных в слове (Капсом буквы не ищет)
+# word = 'WallEy'
+# for letter in word:
+#     if letter in volwes:
+#         print(letter)
