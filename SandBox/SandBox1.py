@@ -112,3 +112,10 @@ spis = ['a', 'b', 'c', 'd', 'e']
 # print(n_s2)
 # print(n_s3)
 # print(n_s1 + n_s2 + n_s3)
+
+fruits = {}  # Создаем словарь
+fruits["apple"] = 10  # Добавляем в словарь элемент с ключом apple и значением 10
+fruits.setdefault('banana', 0)  # Setdefault гарантирует нам инициализацию несуществующих ключей(вместо 'banana') может
+# быть любое значение, в т.ч. и переменная (н-р в цикле for (см.Vowel set v_2.py))
+fruits['banana'] += 1  #
+print(fruits)
