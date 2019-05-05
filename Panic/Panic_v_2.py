@@ -6,6 +6,7 @@ print(plist)
 
 new_phase = ''.join(plist[1:3:1])  # Выделяет on из plist
 new_phase = new_phase + ''.join([plist[5], plist[4], plist[7], plist[6]])  # К on присоединяются еще ' ','t','a','p'
+#  + то конкатенация строк
 #  Параллельтно все преобразовывается в строку
 
 print(plist)
