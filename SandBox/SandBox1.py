@@ -119,3 +119,15 @@ import random
 # # может быть любое значение, в т.ч. и переменная (н-р в цикле for (см.Vowel set v_2.py))
 # fruits['banana'] += 1  #
 # print(fruits)
+
+# letters = set('aaooeeiiuuyy')
+# word = str(input("Введите строку:"))
+# perem = letters.union(set(word))  # объединение множества и строки word переведенной в множество объектов-символов
+# # PEREM - новое множество в котором объединены мн-во letters и переведенное в мн-во строка word
+# print(word)
+# print(letters)
+# print(perem)
+# sor_list = sorted(list(perem))  # Сортируем и преобразуем множество в список (БЕЗ ПОВТОРЕНИЙ)
+# print(sor_list)
+# diff = letters.difference(set(word))
+# print(diff)
