@@ -174,3 +174,29 @@
 # print(spis)
 # spis.pop()
 # print(spis)
+
+########################################################################################################################
+
+# TASK 11
+# Binary search
+
+# def binarysearch(arr, guess):
+#     low = 0
+#     high = len(arr) - 1
+#     while low <= high:
+#         mid = int((high + low) / 2)
+#         tr = arr[mid]
+#         if guess == tr:
+#             print('yes')
+#             return mid
+#         if tr > guess:
+#             high = mid - 1
+#         else:
+#             low = mid + 1
+#     return None
+#
+#
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(binarysearch(arr, 1))
+
+########################################################################################################################

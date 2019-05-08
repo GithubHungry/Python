@@ -4,6 +4,7 @@ import datetime
 import time
 import html
 import random
+import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -131,3 +132,32 @@ import random
 # print(sor_list)
 # diff = letters.difference(set(word))
 # print(diff)
+
+# list = ['a', 'o', 'e', 'i', 'u', 'y']
+# print(type(list))  # Type() - Выведет тип объекта
+# kort = ('a', 'o', 'e', 'u', 'y', 'i')  # Задание кортежа
+# print(type(kort))
+# list[0] = 'A'
+# print(list)
+# # kort[2]=5  # Ошибка , т.к. кортеж не может быть изменен
+# # print(kort)  # Вывод ошибки :)
+
+# Ne_kort = ('Python')  # ЭТО СТРОКА ,А НЕ КОРТЕЖ
+# print(type(Ne_kort))
+# kort = ('Python',)  # ЭТО КОРТЕЖ ИЗ 1 ЭЛЕМЕНТА
+# print(type(kort))
+
+# people = {}
+# people['Ford'] = {'Name': 'Ford Perfect', 'Gender': 'Male', 'Occupation': 'Researcher',
+#                   'Home Planet': 'Betelgeuse Seven'}
+# people['Arthur'] = {'Name': 'Arthur Dent', 'Gender': 'Male', 'Occupation': 'Sandwich-Maker',
+#                     'Home Planet': 'Earth'}
+# people['Trillian'] = {'Name': 'Trillian McMillan', 'Gender': 'Female', 'Occupation': 'Mathematician',
+#                       'Home Planet': 'Earth'}
+# people['Robot'] = {'Name': 'Marvin', 'Gender': 'Unknown', 'Occupation': 'Paranoid Android',
+#                    'Home Planet': 'Unknown'}
+# pprint.pprint(people)  # Двойной вызов,т.к.мы в 2 слова импортили, а не в 4
+# # for k, v in sorted(people.items()):  # founded.item() - возвращает список пар ключ/значение (ПРЕДПОЧТИТЕЛЬНЕЕ)
+# #     # sorted(dictionary) - сортирует словарь (по ключам?)
+# #     print(k, ',а детальнее:', v,)
+# print(people['Arthur']['Occupation'])
