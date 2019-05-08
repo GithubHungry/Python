@@ -5,6 +5,7 @@ import time
 import html
 import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
+import SearchFunctionForVowels
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -164,3 +165,6 @@ import pprint  # Библиотека, которая выводит струк�
 
 # vowels = set('123456')
 # print(vowels)
+
+print(SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5))
+print(SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15))
