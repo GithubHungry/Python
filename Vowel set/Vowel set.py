@@ -1,3 +1,4 @@
+# import SearchFunctionForVowels
 vowel = ['a', 'o', 'e', 'u', 'y', 'i', 'A', 'O', 'E', 'U', 'Y', 'I']
 founded = []
 word = input("Provide a word to search for volwes: ")
