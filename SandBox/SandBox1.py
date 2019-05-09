@@ -7,6 +7,7 @@ import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 import SearchFunctionForVowels
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -168,4 +169,24 @@ import SearchFunctionForVowels
 
 # print(SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5))
 # print(SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15))
-SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
+# SearchFunctionForVowels.binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
+
+# def change_r(arg: int):  # Аргумент передается по значению,т.е. не меняется
+#     print('Before:', arg)
+#     arg += 1
+#     print('After:', arg)
+#     return a
+#
+#
+# def change_julia(arg: list):  # Аргумент передается по ссылке => меняется
+#     print('before:', arg)
+#     arg.append(666)
+#     print('after', arg)
+#
+#
+# list = [1, 2, 3, 4, 5]
+# a = 1
+# print(change_r(a))
+# change_julia(list)
+# print(a)
+# print(list)
