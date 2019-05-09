@@ -4,7 +4,6 @@ import SearchFunctionForVowels
 app = Flask(__name__)
 
 
-
 # def hello() -> '302':
 #     return redirect('/entry')  # Сообщает браузеру, что необходимо запросить альтернативный URL
 
