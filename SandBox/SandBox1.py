@@ -201,6 +201,14 @@ import SearchFunctionForVowels
 #     print(string, end='')  # end='' для убирания пробелов между строками вывода
 # tasks.close()
 
-with open('todos.txt') as fi:  # Конструкция with сама закрывает дескриптор файла
-    for string in fi:
-        print(string, end='')
+# with open('todos.txt') as fi:  # Конструкция with сама закрывает дескриптор файла (Предпочтительнее)
+#     for string in fi:
+#         print(string, end='')
+
+names = ['Vadim', 'Oleg', 'Lisa', 'Nazar', 'Anton']
+print(names)
+perem = '|'.join(names)  # '|'.Join() Объединяет элементы списка в строку разделенную символом |
+print(perem)
+print(type(perem))
+per = perem.split('|')  # perem.split('|') преобразует строку в массив строк по разделителю |
+print(per)
