@@ -7,7 +7,6 @@ import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 import SearchFunctionForVowels
 
-
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -190,3 +189,18 @@ import SearchFunctionForVowels
 # change_julia(list)
 # print(a)
 # print(list)
+
+# todos = open('todos.txt', 'a')  # Открывает файл для записи в конец(а)
+# print('Zapis1', file=todos)  # Запивывает в файл file=todos
+# print('Zapis2', file=todos)
+# print('Zapis3', file=todos)
+# todos.close()  # Закрывает дескриптор
+#
+# tasks = open('todos.txt', 'r')  # Открывает файл для записи, по умолчании с параметром 'r'
+# for string in tasks:
+#     print(string, end='')  # end='' для убирания пробелов между строками вывода
+# tasks.close()
+
+with open('todos.txt') as fi:  # Конструкция with сама закрывает дескриптор файла
+    for string in fi:
+        print(string, end='')
