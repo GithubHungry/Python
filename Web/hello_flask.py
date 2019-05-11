@@ -34,9 +34,13 @@ def entry_page() -> 'html':
 
 @app.route('/viewlog')
 def view_log() -> str:
-    with open('Search.log') as fi:
-        content = fi.readlines()  # Читает весь файл строками? , READ - читает весь файл в строку,readline построчно
-    return escape(''.join(content))
+    contents = []
+    with open('Search.log') as log:
+        for line in log:
+            contents.append([])  # Создается подсписок списка 0(0),0(1),0(2) и т.д.
+            for item in line.split('|'):  # Для подстроки в логе
+                contents[-1].append(escape(item))  # В список списка добавляется элемент(сначала это 0(0) потом 0(1))
+    return str(contents)
 
 
 if __name__ == '__main__':  # Оборачиваем .run() конструкцией if для PythonAnywhere
