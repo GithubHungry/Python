@@ -33,14 +33,15 @@ def entry_page() -> 'html':
 
 
 @app.route('/viewlog')
-def view_log() -> str:
+def view_log() -> 'html':
     contents = []
     with open('Search.log') as log:
         for line in log:
             contents.append([])  # Создается подсписок списка 0(0),0(1),0(2) и т.д.
             for item in line.split('|'):  # Для подстроки в логе
                 contents[-1].append(escape(item))  # В список списка добавляется элемент(сначала это 0(0) потом 0(1))
-    return str(contents)
+    titles = ('Form Data', 'Remote_addr', 'User_agent', 'Results')
+    return render_template('viewlog.html', the_title='View log', the_row_titles=titles, the_data=contents)
 
 
 if __name__ == '__main__':  # Оборачиваем .run() конструкцией if для PythonAnywhere

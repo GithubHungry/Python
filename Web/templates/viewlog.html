@@ -4,14 +4,14 @@
 <h2>{{the_title}}</h2>
 <table>
     <tr>
-        {% for the_row_title in the_row_titles%}
+        {% for the_row_title in the_row_titles %}
         <th>{{the_row_title}}</th>
         {% endfor %}
     </tr>
-    {% for log_data in the_data %}
+    {% for log_data_row in the_data %}  <!-- Считывается подмассив с 4-мя элементами -->
     <tr>
-        {% for item in log_data %}
-        <td>log_data</td>
+        {% for item in log_data_row %}  <!-- Берется 1 из 4 элементов и засовывается под свой столбец -->
+        <td>{{item}}</td>
         {% endfor %}
     </tr>
     {% endfor %}
