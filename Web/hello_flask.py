@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, escape
 import SearchFunctionForVowels
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ app = Flask(__name__)
 #     return redirect('/entry')  # Сообщает браузеру, что необходимо запросить альтернативный URL
 
 def log_request(req: 'flask-request', res: str) -> None:  # В параметрах имя объекта request и строка результата
-    import mysql.connector
+    """Журналирует веб-запрос и возвращает результаты"""
     dbparam = {'host': '127.0.0.1', 'user': 'vsearch', 'password': 'vsearchpasswd', 'database': 'vsearchlogDB'}
     conn = mysql.connector.connect(**dbparam)  # Создание соединения с параметрами
     cur = conn.cursor()  # Создание курсора
