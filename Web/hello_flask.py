@@ -8,12 +8,22 @@ app = Flask(__name__)
 #     return redirect('/entry')  # Сообщает браузеру, что необходимо запросить альтернативный URL
 
 def log_request(req: 'flask-request', res: str) -> None:  # В параметрах имя объекта request и строка результата
-    with open('Search.log', 'a') as fi:
-        print(req.form, req.remote_addr, req.user_agent, res, file=fi, sep='|')
-        # print(req.form, file=fi, end='|')  # Сохраняет данные из формы в файл
-        # print(req.remote_addr, file=fi, end='|')  # Сохраняет ip адрес пользователя
-        # print(req.user_agent, file=fi, end='|')  # Сохраняет вид браузера пользователя
-        # print(res, file=fi)  # Сохраняет результат отработки функции do_search
+    import mysql.connector
+    dbparam = {'host': '127.0.0.1', 'user': 'vsearch', 'password': 'vsearchpasswd', 'database': 'vsearchlogDB'}
+    conn = mysql.connector.connect(**dbparam)  # Создание соединения с параметрами
+    cur = conn.cursor()  # Создание курсора
+    _SQL = """insert into log (phrase,letters,ip,browser,results) values (%s,%s,%s,%s,%s)"""  # Подготовленный запрос
+    cur.execute(_SQL, (req.form['phrase'], req.form['letters'], req.remote_addr, req.user_agent, res))  # Выполнение
+    # запрос с подставкой данных из формы и тд и тп
+    conn.commit()  # Принудительная запись в БД
+    cur.close()  # Закрываем курсор
+    conn.close()  # Закрываем соединение
+    # with open('Search.log', 'a') as fi:
+    #     print(req.form, req.remote_addr, req.user_agent, res, file=fi, sep='|')
+    # print(req.form, file=fi, end='|')  # Сохраняет данные из формы в файл
+    # print(req.remote_addr, file=fi, end='|')  # Сохраняет ip адрес пользователя
+    # print(req.user_agent, file=fi, end='|')  # Сохраняет вид браузера пользователя
+    # print(res, file=fi)  # Сохраняет результат отработки функции do_search
 
 
 @app.route('/search4', methods=['POST'])  # Метод POST как и в форме
