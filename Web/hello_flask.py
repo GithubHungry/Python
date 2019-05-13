@@ -13,9 +13,11 @@ def log_request(req: 'flask-request', res: str) -> None:  # В параметр�
     dbparam = {'host': '127.0.0.1', 'user': 'vsearch', 'password': 'vsearchpasswd', 'database': 'vsearchlogDB'}
     conn = mysql.connector.connect(**dbparam)  # Создание соединения с параметрами
     cur = conn.cursor()  # Создание курсора
+
     _SQL = """insert into log (phrase,letters,ip,browser,results) values (%s,%s,%s,%s,%s)"""  # Подготовленный запрос
-    cur.execute(_SQL, (req.form['phrase'], req.form['letters'], req.remote_addr, req.user_agent.browser, res))  # Выполнение
-    # запрос с подставкой данных из формы и тд и тп
+    cur.execute(_SQL, (req.form['phrase'], req.form['letters'], req.remote_addr, req.user_agent.browser, res))
+    # Выполнение запроса с подставкой данных из формы и тд и тп
+
     conn.commit()  # Принудительная запись в БД
     cur.close()  # Закрываем курсор
     conn.close()  # Закрываем соединение

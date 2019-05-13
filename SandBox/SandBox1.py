@@ -205,10 +205,10 @@ import SearchFunctionForVowels
 #     for string in fi:
 #         print(string, end='')
 
-names = ['Vadim', 'Oleg', 'Lisa', 'Nazar', 'Anton']
-print(names)
-perem = '|'.join(names)  # '|'.Join() Объединяет элементы списка в строку разделенную символом |
-print(perem)
-print(type(perem))
-per = perem.split('|')  # perem.split('|') преобразует строку в массив строк по разделителю |
-print(per)
+# names = ['Vadim', 'Oleg', 'Lisa', 'Nazar', 'Anton']
+# print(names)
+# perem = '|'.join(names)  # '|'.Join() Объединяет элементы списка в строку разделенную символом |
+# print(perem)
+# print(type(perem))
+# per = perem.split('|')  # perem.split('|') преобразует строку в массив строк по разделителю |
+# print(per)
