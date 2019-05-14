@@ -215,9 +215,9 @@ import SearchFunctionForVowels
 # print(per)
 
 
-class CountFromBy:
-    pass
-
-
-obj1 = CountFromBy()
-obj2 = CountFromBy()
+# class CountFromBy:
+#     pass
+#
+#
+# obj1 = CountFromBy()
+# obj2 = CountFromBy()
