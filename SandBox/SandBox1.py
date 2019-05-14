@@ -7,6 +7,7 @@ import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 import SearchFunctionForVowels
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -212,3 +213,11 @@ import SearchFunctionForVowels
 # print(type(perem))
 # per = perem.split('|')  # perem.split('|') преобразует строку в массив строк по разделителю |
 # print(per)
+
+
+class CountFromBy:
+    pass
+
+
+obj1 = CountFromBy()
+obj2 = CountFromBy()
