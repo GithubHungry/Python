@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, escape
+from flask import Flask, render_template, request, escape, session
 import SearchFunctionForVowels
 from DBcm import UseDatabase
+from checker import check_logged_in
 
 app = Flask(__name__)
 
@@ -53,6 +54,7 @@ def entry_page() -> 'html':
 
 
 @app.route('/viewlog')
+@check_logged_in
 def view_log() -> 'html':
     """Читает записи из (текстового файла) MySQL"""
 
@@ -70,6 +72,22 @@ def view_log() -> 'html':
     titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
     return render_template('viewlog.html', the_title='View log', the_row_titles=titles, the_data=contents)
 
+
+@app.route('/login')
+def do_login() -> str:
+    """login in system"""
+    session['logged_in'] = True
+    return 'You are successfully logged in.'
+
+
+@app.route('/logout')
+def do_logout() -> str:
+    """logout from system"""
+    session.pop('logged_in')
+    return 'You are logged out, bye!'
+
+
+app.secret_key = '322228'
 
 if __name__ == '__main__':  # Оборачиваем .run() конструкцией if для PythonAnywhere
     app.run(debug=True)
