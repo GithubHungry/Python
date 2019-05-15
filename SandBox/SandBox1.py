@@ -221,3 +221,39 @@ import SearchFunctionForVowels
 #
 # obj1 = CountFromBy()
 # obj2 = CountFromBy()
+
+def MyFunc(*args):  # Передаем любое кол-во аргументов (args просто заглушка, галвное *)
+    for a in args:  # Перебео каждого аргумента
+        print(a, end=' ')
+    if args:  # Вставляет пустую строку между вызовами
+        print()
+
+
+def MyFunc2(**kwargs):  # Передаем аргументы в словаре (именнованные аргументы)
+    for k, v in kwargs.items():  # key,values из словаря
+        print(k, v, sep='->', end=' ')  # Выбрать каждую пару ключ-значение из словаря и вывести на экран
+    if kwargs:
+        print()
+
+
+def MyFunc3(*args, **kwargs):  # Принимает Ваще любые параметры
+    if args:
+        for a in args:
+            print(a, end=' ')
+        print()
+    if kwargs:
+        for k, v in kwargs.items():
+            print(k, v, sep='->', end=' ')
+        print()
+
+
+sp = [1, 2, 3, 4, 5]
+MyFunc()
+MyFunc(10)
+MyFunc('a', 'b', 10)
+MyFunc(sp)  # Передаем список как 1 аргумент
+MyFunc(*sp)  # Передаем список как список аргументов(каждый элемент списка - это аргумент в функцию)
+MyFunc2(a=10, b=21)  # Вызов myfun2 (параметры задаются как k=а v=10)
+MyFunc3()
+MyFunc3(1, 2, 3)
+MyFunc3('xyz', a=100, b=500)
