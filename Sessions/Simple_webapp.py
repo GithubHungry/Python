@@ -1,4 +1,5 @@
 from flask import Flask, session
+from checker import check_logged_in
 
 app = Flask(__name__)
 app.secret_key = '322228'
@@ -18,21 +19,21 @@ def do_login() -> str:
 
 
 @app.route('/page1')
+@check_logged_in  # Подключаем новый декоратор
 def page1() -> str:
     """Page one"""
-    if 'logged_in' in session:
-        return 'This is page 1'
-    else:
-        return 'Oppps? problemez!'
+    return 'This is page 1'
 
 
 @app.route('/page2')
+@check_logged_in
 def page2() -> str:
     """Page two"""
     return 'This is page 2'
 
 
 @app.route('/page3')
+@check_logged_in
 def page3() -> str:
     """Page three"""
     return 'This is page 3'
