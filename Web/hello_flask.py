@@ -41,7 +41,10 @@ def do_search() -> 'html':
     phrase = request.form['phrase']  # Получаем данные из формы
     letters = request.form['letters']
     result = str(SearchFunctionForVowels.search_for_letters_v_2(phrase, letters))
-    log_request(request, result)  # вызов функции журналирования
+    try:
+        log_request(request, result)  # вызов функции журналирования
+    except Exception as err:
+        print('F*ck, error here:', str(err))
     return render_template('results.html', the_letters=letters, the_phrase=phrase, the_title='Here are your results!',
                            the_results=result)
 

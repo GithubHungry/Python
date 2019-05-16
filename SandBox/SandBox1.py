@@ -257,18 +257,18 @@ import SearchFunctionForVowels
 # MyFunc3(1, 2, 3)
 # MyFunc3('xyz', a=100, b=500)
 
-try:
-    with open('myfile.txt') as fh:
-        file_data = fh.read()
-        print(file_data)
-# except FileNotFoundError:  # Обработка определенной ошибки
-#     print('The data file is missing!')
-except PermissionError:
-    print('Error?')
-# except:  # Обработка любых исключений
-#     print('Unknown error')
-except Exception as err:
-    print('Some other error occurred:', str(err))
+# try:
+#     with open('myfile.txt') as fh:
+#         file_data = fh.read()
+#         print(file_data)
+# # except FileNotFoundError:  # Обработка определенной ошибки
+# #     print('The data file is missing!')
+# except PermissionError:
+#     print('Error?')
+# # except:  # Обработка любых исключений
+# #     print('Unknown error')
+# except Exception as err:
+#     print('Some other error occurred:', str(err))
 
 # try:
 #     1/0
