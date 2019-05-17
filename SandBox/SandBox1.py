@@ -6,6 +6,7 @@ import html
 import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 import SearchFunctionForVowels
+from threading import Thread
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -276,3 +277,5 @@ import SearchFunctionForVowels
 #     err=sys.exc_info()
 #     for e in err:
 #         print(e)
+
+
