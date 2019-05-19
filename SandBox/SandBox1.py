@@ -9,7 +9,6 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
-
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -293,7 +292,30 @@ from datetime import datetime
 #     """Find fact n"""
 #     if n <= 0:
 #         return 1
-#     return n * factorial(n - 1)
+#     else:
+#         return n * factorial(n - 1)
 #
 #
 # print(factorial(5))
+
+# def greet(name: str) -> None:
+#     print('hello' + name + '!')
+#     greet2(name)
+#     print('getting ready to say bye...')
+#     bye()
+#
+#
+# def greet2(name: str) -> None:
+#     print('How are you ' + name + '?')
+#
+#
+# def bye() -> None:
+#     print('Bye-bye')
+#
+#
+# greet('Vadim')
+
+
+# print(20 // 3)  # Целочисленное деление
+# print(20 ** 3)  # ** - степень
+# print(20 % 3)  # Остаток от деления
