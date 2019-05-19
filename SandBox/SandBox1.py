@@ -9,6 +9,7 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -319,3 +320,44 @@ from datetime import datetime
 # print(20 // 3)  # Целочисленное деление
 # print(20 ** 3)  # ** - степень
 # print(20 % 3)  # Остаток от деления
+
+# class Human:
+#     name = 'Vadim'
+#     age = 21
+#
+#     def __init__(self, name='vadim', age=21):  # А-ля конструктор
+#         self.name = name
+#         self.age = age
+#
+#     def set(self, name: str, age: int) -> None:
+#         self.name = name
+#         self.age = age
+#
+#     def show(self):
+#         print('Name is: ' + self.name)
+#         print('Age is: ' + str(self.age))
+#
+#
+# class Student(Human):
+#     num = 620603
+#
+#     def __init__(self, num: int = 620603):
+#         self.num = num
+#
+#     def set(self, name: str, age: int, num: int):
+#         self.name = name
+#         self.age = age
+#         self.num = num
+#
+#     def show(self):
+#         print(self.name + ' ' + str(self.age) + ' ' + str(self.num))
+#
+#
+# man1 = Human()
+# man1.set(name='Oleg', age=20)
+# man1.show()
+# print(man1.name + ' ' + str(man1.age))
+# man2 = Human(name='anton', age=19)
+# man2.show()
+# man3 = Student(620601)
+# man3.show()
