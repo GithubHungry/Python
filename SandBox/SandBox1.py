@@ -9,6 +9,7 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -287,3 +288,12 @@ from datetime import datetime
 #
 # def convert2ampm(time24: str) -> str:
 #     return datetime.strptime(time24, '%H:%M').strftime("%I:%M%p")
+
+# def factorial(n: int) -> int:  # recursion
+#     """Find fact n"""
+#     if n <= 0:
+#         return 1
+#     return n * factorial(n - 1)
+#
+#
+# print(factorial(5))
