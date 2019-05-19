@@ -7,6 +7,7 @@ import random
 import pprint  # Библиотека, которая выводит структуру данных в читаемом виде
 import SearchFunctionForVowels
 from threading import Thread
+from datetime import datetime
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -278,4 +279,11 @@ from threading import Thread
 #     for e in err:
 #         print(e)
 
-
+# s = 'I DID NOT MEAN TO SHOUT'
+# print(s)
+# t = s.title()  # Преобразование букв верхнего регистр в слово с заглавной буквы
+# print(t)
+#
+#
+# def convert2ampm(time24: str) -> str:
+#     return datetime.strptime(time24, '%H:%M').strftime("%I:%M%p")
