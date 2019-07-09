@@ -9,7 +9,6 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
-
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -361,3 +360,29 @@ from datetime import datetime
 # man2.show()
 # man3 = Student(620601)
 # man3.show()
+
+# message = "Start learning python again..."
+# print(message)
+# message = "oh, fuck"
+# print(message)
+
+# name = 'ave maria!'
+# print(name.title())
+# print(name.upper())
+# print(name.lower())
+# first = 'ave'
+# last = 'maria'
+# latest = '!'
+# full = first + " " + last + " " + latest
+# print(full)
+
+# message = "deus vult ! "
+# print(message.strip())
+
+name = str(input("Enter your name : "))
+print("Hello "+name.title()+", would you like to learn some python today?")
+print(name.upper())
+print(name.lower())
+print(name.title())
+print('Albert Einstein once said , "A person who never made a mistake never tried anything new." ')
+print(name.title()+' once said , "A person who never made a mistake never tried anything new." ')
