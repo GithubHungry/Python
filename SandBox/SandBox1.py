@@ -379,10 +379,91 @@ from datetime import datetime
 # message = "deus vult ! "
 # print(message.strip())
 
-name = str(input("Enter your name : "))
-print("Hello "+name.title()+", would you like to learn some python today?")
-print(name.upper())
-print(name.lower())
-print(name.title())
-print('Albert Einstein once said , "A person who never made a mistake never tried anything new." ')
-print(name.title()+' once said , "A person who never made a mistake never tried anything new." ')
+# name = str(input("Enter your name : "))
+# print("Hello "+name.title()+", would you like to learn some python today?")
+# print(name.upper())
+# print(name.lower())
+# print(name.title())
+# print('Albert Einstein once said , "A person who never made a mistake never tried anything new." ')
+# print(name.title()+' once said , "A person who never made a mistake never tried anything new." ')
+
+# names = ['Oleg', 'Egor', 'Nazar', 'Antony', 'Ellise']
+# for name in range(len(names)):
+#     print("Hi!" + names[name] + " is my friend.")
+#
+# brands = ['Bmw', 'Honda', 'Mercedes']
+# print("I wanna "+brands[0].upper())
+# print("I not wanna "+brands[1].upper())
+# print("I wanna "+brands[2].upper())
+
+# print(hex(21))
+
+# guests = ['Oleg', 'Nazar', 'Antony']
+# print(guests[0] + ",i wanna to invite you for lunch!")
+# print(guests[1] + ",i wanna to invite you for lunch!")
+# print(guests[2] + ",i wanna to invite you for lunch!")
+# print("Shit," + guests[2] + " cant visit me")
+# del guests[2]
+# guests.append("Elisse")
+# for guest in range(len(guests)):
+#     print(guests[guest] + ",i wanna to invite you for lunch!")
+# print("Ooo! Some new friends!")
+# guests.insert(0, 'Egor')
+# guests.insert(2,'Maks')
+# guests.append('Miha')
+# for guest in range(len(guests)):
+#     print(guests[guest] + ",i wanna to invite you for lunch!")
+# print("Pizda stoly!")
+# print(guests.pop(1)+", sorry,but idi nahooy")
+# print(guests.pop()+", sorry,but idi nahooy")
+# print(guests.pop()+", sorry,but idi nahooy")
+# print(guests.pop()+", sorry,but idi nahooy")
+# for guest in range(len(guests)):
+#     print(guests[guest] + ",i wanna to invite you for lunch!")
+# del guests[1]
+# del guests[0]
+# print(guests)
+
+# cars = ['bmw', 'audi', 'zapor', 'mercedes']
+# print(cars)
+# # print(sorted(cars, reverse=True))
+# cars.reverse()
+# print(cars)
+
+# countries = ['France', 'America', 'China', 'England', 'Sydney']
+# for country in countries:
+#     print(country )
+# print(countries)
+# print(sorted(countries))
+# print(countries)
+# print(sorted(countries, reverse=True))
+# countries.reverse()
+# print(countries)
+# countries.reverse()
+# print(countries)
+# countries.sort()
+# print(countries)
+# countries.sort(reverse=True)
+# print(countries)
+# print(len(countries))
+
+# pizzas = ['pepperoni', 'bbq', 'chesse']
+# for pizza in pizzas:
+#     print("I like "+pizza+" pizza!")
+# print("i really like pizza!")
+
+# for num in range(1, 11):
+#     print(num ** 2)
+#
+# squares = []
+# for num in range(1, 11):
+#     squares.append(num ** 2)
+# print(squares)
+
+list = [value ** 3 for value in range(1, 11)]
+print(list)
+chisla = [value for value in range(3, 31,3)]
+# print(sum(chisla))
+# for chislo in chisla:
+#     print(chislo)
+print(chisla)
