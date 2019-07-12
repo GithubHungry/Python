@@ -460,10 +460,44 @@ from datetime import datetime
 #     squares.append(num ** 2)
 # print(squares)
 
-list = [value ** 3 for value in range(1, 11)]
-print(list)
-chisla = [value for value in range(3, 31,3)]
+# list = [value ** 3 for value in range(1, 11)]
+# print(list)
+# chisla = [value for value in range(3, 31,3)]
 # print(sum(chisla))
 # for chislo in chisla:
 #     print(chislo)
-print(chisla)
+# print(chisla)
+
+# cars = ['bmw', 'audi', 'mercedes', 'zapor', 'lada']
+# print('The first three items in the list are: ')
+# for car in cars[:3]:
+#     print(car.title())
+# print('The middle three items in the list are: ')
+# for car in cars[1:4]:
+#     print(car.title())
+# print('The last three items in the list are: ')
+# for car in cars[-3:]:
+#     print(car.title())
+
+# pizzas = ['pepperoni', 'bbq', 'chesse']
+# new_pizzas = pizzas.copy()
+# print(pizzas)
+# print(new_pizzas)
+# pizzas.append('margaret')
+# new_pizzas.append('mushrooms')
+# print("Old pizzas are :")
+# for pizza in pizzas:
+#     print(pizza)
+# print("New pizzas are :")
+# for n_pizza in new_pizzas:
+#     print(n_pizza)
+
+# rectangle = (200, 500)
+# print(rectangle)
+
+# menu = ('rice', 'potato', 'meat', 'fish', 'bread')
+# for dish in menu:
+#     print(dish.title())
+# menu = ('vodka', 'beer', 'coctail')
+# for dish in menu:
+#     print(dish.title())
