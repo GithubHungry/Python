@@ -501,3 +501,21 @@ from datetime import datetime
 # menu = ('vodka', 'beer', 'coctail')
 # for dish in menu:
 #     print(dish.title())
+
+# for car in cars:
+#     if car == 'bmw':
+#         print(car.upper())
+#     else:
+#         print(car.title())
+
+# car = 'Subaru'
+# print(car == 'Subaru')
+# print("is it car == 'subaru'?, i think true")
+
+# alien_color = 'red'
+# if alien_color == 'green':
+#     print("5 points")
+# elif alien_color == 'yellow':
+#     print("10 points")
+# else:
+#     print("100 points")
