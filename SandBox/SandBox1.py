@@ -541,13 +541,22 @@ from datetime import datetime
 #     if i not in spis:
 #         print("Hello, "+i)
 
-numbers = [val for val in range(1, 11)]
-for num in numbers:
-    if num == 1:
-        print(str(num)+'st')
-    elif num == 2:
-        print(str(num)+'nd')
-    elif num == 3:
-        print(str(num)+'rd')
-    else:
-        print(str(num)+'th')
+# numbers = [val for val in range(1, 11)]
+# for num in numbers:
+#     if num == 1:
+#         print(str(num)+'st')
+#     elif num == 2:
+#         print(str(num)+'nd')
+#     elif num == 3:
+#         print(str(num)+'rd')
+#     else:
+#         print(str(num)+'th')
+
+# langs = {'Vadim': 'Python', 'Oleg': 'JS', 'Liza': 'C#', 'Nazar': 'Ruby', 'Anton': 'C#'}
+# for man, lang in langs.items():
+#     print(man.upper() + "'s favorite language is " + lang)
+
+# slovoSPB = {'MC': 'Oxxxymiron', 'Sonya': 'Marmeladova', 'Vitya': 'ST'}
+# for key, value in slovoSPB.items():
+#     print('key: ' + key)
+#     print('value: ' + value)
