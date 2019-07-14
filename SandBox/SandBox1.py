@@ -519,3 +519,35 @@ from datetime import datetime
 #     print("10 points")
 # else:
 #     print("100 points")
+
+# users = ['Oleg', 'Nazar', 'Liza', 'Anton', 'Admin']
+# if users:
+#     for user in users:
+#         if user == 'Admin':
+#             print("Hello, admin, would you like to see a status report?")
+#         else:
+#             print("Hello, " + user + ", thank you for logging in again")
+# else:
+#     print("We need to find some users")
+
+# current_users = ['Oleg', 'Nazar', 'Liza', 'Anton', 'Admin']
+# new_users = ['Nazar', 'Vadim', 'Egor', 'Igor', 'Alex', 'LIZA']
+# spis = []
+# for i in new_users:
+#     for j in current_users:
+#         if i.lower() == j.lower():
+#             print('Error ' + i)
+#             spis.append(i)
+#     if i not in spis:
+#         print("Hello, "+i)
+
+numbers = [val for val in range(1, 11)]
+for num in numbers:
+    if num == 1:
+        print(str(num)+'st')
+    elif num == 2:
+        print(str(num)+'nd')
+    elif num == 3:
+        print(str(num)+'rd')
+    else:
+        print(str(num)+'th')
