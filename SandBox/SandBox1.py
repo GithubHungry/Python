@@ -552,11 +552,49 @@ from datetime import datetime
 #     else:
 #         print(str(num)+'th')
 
+# friends = ['Oleg', 'Nazar']
 # langs = {'Vadim': 'Python', 'Oleg': 'JS', 'Liza': 'C#', 'Nazar': 'Ruby', 'Anton': 'C#'}
 # for man, lang in langs.items():
 #     print(man.upper() + "'s favorite language is " + lang)
+# for name in langs:
+#     print(name)
+# for name in langs.keys():
+#     if name in friends:
+#         print('Hello, ' + name + ', your favoirite language is:' + langs[name])
+# if 'Bill' not in langs.keys():
+#     print('Bill take our pool!')
 
 # slovoSPB = {'MC': 'Oxxxymiron', 'Sonya': 'Marmeladova', 'Vitya': 'ST'}
 # for key, value in slovoSPB.items():
 #     print('key: ' + key)
 #     print('value: ' + value)
+
+# man = {'first_name': 'Bardier', 'last_name': 'Vadim', 'age': '21', 'city': 'Minsk'}
+# print(man['first_name'])
+# print(man['last_name'])
+# print(man['age'])
+# print(man['city'])
+# for key, val in man.items():
+#     print(key, val)
+
+# langs = {'Vadim': 'Python', 'Oleg': 'JS', 'Liza': 'C#', 'Nazar': 'Ruby', 'Anton': 'C#'}
+# for name, language in sorted(langs.items()):
+#     print(name + " " + language)
+# for language in sorted(set(langs.values())):
+#     print(language)
+
+# rivers = {'nile': 'Egypt', 'amazonka': 'USA', 'volga': 'Russia'}
+# for name, country in rivers.items():
+#     print(name + ' ' + country)
+# for name in sorted(rivers.keys()):
+#     print(name)
+# for country in sorted(rivers.values()):
+#     print(country)
+
+# langs = {'Vadim': 'Python', 'Oleg': 'JS', 'Liza': 'C#', 'Nazar': 'Ruby', 'Anton': 'C#'}
+# must_have = ['nazar', 'liza', 'egor']
+# for must in must_have:
+#     if must.title() in langs.keys():
+#         print(must.title() + ' thanks')
+#     else:
+#         print(must.title() + ' please take part in a pool')
