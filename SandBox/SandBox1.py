@@ -598,3 +598,79 @@ from datetime import datetime
 #         print(must.title() + ' thanks')
 #     else:
 #         print(must.title() + ' please take part in a pool')
+
+# alien_0 = {'color': 'red', 'points': '15'}
+# alien_1 = {'color': 'yellow', 'points': '10'}
+# alien_2 = {'color': 'green', 'points': '5'}
+# aliens = [alien_0, alien_1, alien_2]
+# for alien in aliens:
+#     print(alien)
+
+# aliens = []
+# for alien_number in range(30):
+#     new_alien = {'speed': 'high', 'color': 'red', 'points': '15'}
+#     aliens.append(new_alien)
+# print("kol-vo: " + str(len(aliens)))
+#
+# for alien in aliens[:3]:
+#     if alien['color'] == 'red':
+#         alien['color'] = 'yellow'
+#         alien['speed'] = 'medium'
+#         alien['points'] = 10
+# for alien in aliens[:5]:
+#     print(alien)
+
+# pizza = {'crust': 'thick', 'toppings': ['mushrooms', 'extra cheese']}
+# print("Your order is: " + pizza['crust'] + " - type of crust, pizza toppings: ")
+# for topping in pizza['toppings']:
+#     print(topping)
+
+# pool = {'Vadim': ['Python', 'PHP'], 'Oleg': ['JS', 'HTML'], 'Liza': ['C#']}
+# for name, lang in pool.items():
+#     if len(lang) == 1:
+#         print(name + "'s favorite language is: " )
+#         for language in pool[name]:
+#             print(language)
+#     else:
+#         print("Name: " + name + ", favorite languages: ")
+#         for lang in pool[name]:
+#             print(lang)
+
+# users = {'aeinstein': {'first': 'Albert', 'last': 'Einstein', 'location': 'Minsk'},
+#          'mcurie': {'first': 'Maria', 'last': 'Curie', 'location': 'Paris'}}
+# for user_name, user_info in users.items():
+#     print("User name is: " + user_name)
+#     full_name = user_info['first'] + " " + user_info['last']
+#     print("Full name is: " + full_name + ", location:" + user_info['location'])
+#     # for key, val in users.items():
+#     #     print(key + ": " + str(val))
+
+# Vadim = {'first': 'Vadim', 'last': 'Bardier', 'city': 'Minsk'}
+# Oleg = {'first': 'Oleg', 'last': 'Cuprianov', 'city': 'Vitebsk'}
+# Arina = {'first': 'Arina', 'last': 'Goncharova', 'city': 'Brest'}
+# people = [Vadim, Oleg, Arina]
+# for p in people:
+#     for k, v in p.items():
+#         print(k + ": " + v)
+
+# jojo = {'name': 'Jorjik', 'owner': 'Vadim'}
+# mart = {'name': 'Martin', 'owner': 'Liza'}
+# pets = [jojo, mart]
+# for pet in pets:
+#     for k, v in pet.items():
+#         print(k + ": " + v)
+#     print("New pet...")
+
+# favorite_places = {'pyramids': ["Liza", "Antony"], "effel tover": ["Antony", "Vadim"], "white house": ["Nazar", "Liza"]}
+# for k, v in favorite_places.items():
+#     print("new place is:")
+#     print(k + " is favorite place for: ")
+#     for person in v:
+#         print(person)
+
+# cities = {'Minsk': {'country': 'Belarus', 'population': 10}, 'Paris': {'country': 'France', 'population': 25},
+#           'Moscow': {'country': 'Russia', 'population': 100}}
+# for k, v in cities.items():
+#     print(k + ": ")
+#     for info in v.values():
+#         print(info)
