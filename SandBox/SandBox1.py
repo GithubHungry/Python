@@ -661,7 +661,8 @@ from datetime import datetime
 #         print(k + ": " + v)
 #     print("New pet...")
 
-# favorite_places = {'pyramids': ["Liza", "Antony"], "effel tover": ["Antony", "Vadim"], "white house": ["Nazar", "Liza"]}
+# favorite_places = {'pyramids': ["Liza", "Antony"], "effel tover": ["Antony", "Vadim"], "white house": ["Nazar",
+# "Liza"]}
 # for k, v in favorite_places.items():
 #     print("new place is:")
 #     print(k + " is favorite place for: ")
@@ -674,3 +675,29 @@ from datetime import datetime
 #     print(k + ": ")
 #     for info in v.values():
 #         print(info)
+
+# Транспонирование матрицы
+matrix = [[0.5, 0, 0, 0, 0],
+          [1, 0.5, 0, 0, 0],
+          [1, 1, 0.5, 0, 0],
+          [1, 1, 1, 0.5, 0],
+          [1, 1, 1, 1, 0.5]]
+
+matrix_t = list(zip(*matrix))  # Транспонирование
+# аналог(matrix[0], matrix[1], matrix[2], matrix[3])
+
+for element in matrix:
+    print(element)
+print('*' * 17)
+for element in matrix_t:
+    print(element)
+
+# Транспонирование ч2
+days = ('пн', 'вт', 'ср', 'чт')
+energy_1 = (1584.5, 596.5, 2417.6, 3695.5)
+energy_2 = (6587.2, 148.3, 6547.2, 2473.2)
+args = (days, energy_1, energy_2)
+# ('пн',1584.5,6587.2)
+result = list(zip(*args))  # первая, вторая, третья, четвертая строка
+# посмотреть про аргументы и их количество
+print(result)
