@@ -9,6 +9,7 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -676,28 +677,164 @@ from datetime import datetime
 #     for info in v.values():
 #         print(info)
 
-# Транспонирование матрицы
-matrix = [[0.5, 0, 0, 0, 0],
-          [1, 0.5, 0, 0, 0],
-          [1, 1, 0.5, 0, 0],
-          [1, 1, 1, 0.5, 0],
-          [1, 1, 1, 1, 0.5]]
+# # Транспонирование матрицы
+# matrix = [[0.5, 0, 0, 0, 0],
+#           [1, 0.5, 0, 0, 0],
+#           [1, 1, 0.5, 0, 0],
+#           [1, 1, 1, 0.5, 0],
+#           [1, 1, 1, 1, 0.5]]
+#
+# matrix_t = list(zip(*matrix))  # Транспонирование
+# # аналог(matrix[0], matrix[1], matrix[2], matrix[3])
+#
+# for element in matrix:
+#     print(element)
+# print('*' * 17)
+# for element in matrix_t:
+#     print(element)
+#
+# # Транспонирование ч2
+# days = ('пн', 'вт', 'ср', 'чт')
+# energy_1 = (1584.5, 596.5, 2417.6, 3695.5)
+# energy_2 = (6587.2, 148.3, 6547.2, 2473.2)
+# args = (days, energy_1, energy_2)
+# # ('пн',1584.5,6587.2)
+# result = list(zip(*args))  # первая, вторая, третья, четвертая строка
+# # посмотреть про аргументы и их количество
+# print(result)
 
-matrix_t = list(zip(*matrix))  # Транспонирование
-# аналог(matrix[0], matrix[1], matrix[2], matrix[3])
+# hello_message = 'Print me something and i repeat all'
+# hello_message += '\n\tType "quit" to end the program: '
+# # message = ' '  # must have,т.к. если нет данных для сравнения, то работа дальше не возможна
+# active = True
+# while active:
+#     message = input(hello_message)
+#     if message == 'quit':
+#         active = False
+#     else:
+#         print(message)
 
-for element in matrix:
-    print(element)
-print('*' * 17)
-for element in matrix_t:
-    print(element)
+# enter_message = "Please, enter the name of a city"
+# enter_message += "\n\t type 'quit' to end the program"
+# while True:
+#     message = input(enter_message)
+#     if message == 'quit':
+#         break
+#     else:
+#         print(message)
 
-# Транспонирование ч2
-days = ('пн', 'вт', 'ср', 'чт')
-energy_1 = (1584.5, 596.5, 2417.6, 3695.5)
-energy_2 = (6587.2, 148.3, 6547.2, 2473.2)
-args = (days, energy_1, energy_2)
-# ('пн',1584.5,6587.2)
-result = list(zip(*args))  # первая, вторая, третья, четвертая строка
-# посмотреть про аргументы и их количество
-print(result)
+# current_number = 0
+# while current_number < 10:
+#     current_number += 1
+#     if current_number % 2 == 0:
+#         continue
+#     print(current_number)
+
+# hello_message = 'Please, type name of topping, which you want to add:'
+# hello_message += '\nType quit to end :'
+# active = True
+# while active:
+#     topping = input(hello_message)
+#     if topping != 'quit':
+#         print("You add " + topping + " in your order")
+#     else:
+#         active = False
+
+# hello_message = "Please, enter your age: "
+# while True:
+#     age = input(hello_message)
+#     if age.isdigit():
+#         age = int(age)
+#         if (age >= 3) and (age <= 12):
+#             print("10$")
+#             break
+#         elif age > 12:
+#             print("15$")
+#             break
+#         elif age < 3:
+#             print("It`s free for you.")
+#             break
+#     elif age == 'exit':
+#         print("Bye, see you next time")
+#         break
+#     else:
+#         print('error')
+#         continue
+
+# unverified_users = ['Oleg', 'Vadim', 'Nazar']
+# verified_users = []
+# while unverified_users:
+#     current_user = unverified_users.pop()
+#     print("Verifying... Complete! User " + current_user + " successfully verified!")
+#     verified_users.append(current_user)
+#     print('*'*55)
+# print("Verified users: ")
+# for user in verified_users:
+#     print(user)
+
+# pool = {}
+# flag = True
+# while flag:
+#     name = input('Please, enter your name: ')
+#     answer = input('Please, enter your favorite number: ')
+#     pool[name] = answer
+#     cont = input('Continue ? (y/n) ')
+#     if cont == 'n':
+#         print('Bye!')
+#         flag = False
+#     elif cont == 'y':
+#         continue
+#     else:
+#         print('Incorrect letter.Bye :|')
+#         flag = False
+# for k, v in pool.items():
+#     print(k + " : " + v)
+
+# order_sandwiches = ['sw_1', 'sw_2', 'sw_3', 'sw_1', 'sw_4', 'sw_1']
+# finished_sandwiches = []
+# print("Warning, there is no sw_1 in our coffee!")
+# while 'sw_1' in order_sandwiches:
+#     order_sandwiches.remove('sw_1')
+# while order_sandwiches:
+#     current_sw = order_sandwiches.pop()
+#     print("Now, I cook " + current_sw + "!")
+#     finished_sandwiches.append(current_sw)
+# for sw in finished_sandwiches:
+#     print(sw)
+
+# def greet_users():
+#     """Simple hello @all"""
+#     print('Hello, traveller!')
+#
+#
+# def greet_users_name(user_name: str):
+#     """Simple hello @user_name"""
+#     print('Hello, traveller (' + user_name.title() + ")!")
+#
+#
+# greet_users()
+# greet_users_name('Vadim')
+
+# def display_message(message: str):
+#     print("Theme: " + message)
+#
+#
+# display_message('Functions')
+
+# def animal_info(animal_type: str, animal_name: str):
+#     """Print info about animal"""
+#     print("I have " + animal_type.lower())
+#     print("My " + animal_type.lower() + "`s name is " + animal_name.title())
+#
+#
+# animal_info('humster', 'homa')
+
+
+# def make_shirt(text: str, size='L'):
+#     print("Size: " + size + ", text: " + text)
+#
+#
+# make_shirt('You suck')
+# make_shirt(text='OOOoaAAA', size='M')
+
+#
