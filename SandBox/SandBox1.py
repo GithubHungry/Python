@@ -837,4 +837,127 @@ from datetime import datetime
 # make_shirt('You suck')
 # make_shirt(text='OOOoaAAA', size='M')
 
+# def fully_name(first_name: str, last_name: str, age=''):
+#     """ men`s info """
+#     person = {'first': first_name, 'last': last_name}
+#     if age:
+#         person['age'] = age
+#     return person
 #
+#
+# men = fully_name('Vadim', 'Bardier', 21)
+# print(men)
+
+# def city_country(city_name: str, country_name):
+#     full = city_name + ', ' + country_name
+#     return full
+#
+#
+# one = city_country("Minsk", "Belarus")
+# two = city_country("Moscow", "Russia")
+# three = city_country("Paris", "France")
+# print(one)
+# print(two)
+# print(three)
+
+# def song_album(song_name: str, album_name: str, number='') -> dict:
+#     """return song+album(+number of songs in album"""
+#     song_alb = {"song": song_name, "album": album_name}
+#     if number:
+#         song_alb['number'] = number
+#     return song_alb
+#
+#
+# one = song_album("Minsk", "Belarus")
+# two = song_album("Moscow", "Russia", 21)
+# three = song_album("Paris", "France", 3)
+# print(one)
+# print(two)
+# print(three)
+# while True:
+#     song_name = input("Please, enter song name: ")
+#     if song_name == 'q':
+#         break
+#     album_name = input("Please, enter album name: ")
+#     if album_name == 'q':
+#         break
+#     number = input("Please, enter number of songs in album: ")
+#     if number == 'q':
+#         break
+#     temp = song_album(song_name, album_name, number)
+#     print(temp)
+
+# def greetings(names: list):
+#     for name in names:
+#         print("Greetings, " + name.title())
+#
+#
+# names_users = ['vadim', 'oleg', 'egor']
+# greetings(names_users)
+
+# def printer_fun(order):
+#     finished = []
+#     while order:
+#         finished.append(order.pop())
+#     return finished
+#
+# order = ['d1', 'd2', 'd3']
+# print(printer_fun(order))
+# print(order)
+
+# def show_magicians(names: list):
+#     for name in names:
+#         print(name.title())
+#
+#
+# def make_great(names: list):
+#     for i in range(len(names)):
+#         names[i] = "Great " + names[i]
+#
+#
+# names = ['vadim', 'egor', 'oleg']
+# make_great(names)
+# show_magicians(names)
+
+# def make_pizza(*toppings):
+#     for topping in toppings:
+#         print(topping)
+#
+#
+# make_pizza('peperoni')
+# make_pizza('mushrooms', 'extra cheese', 'more meat')
+# make_pizza()
+
+# def built_info(first_name, last_name, **add_info):
+#     """Return dict with info about people"""
+#     person = {}
+#     person['first_name'] = first_name
+#     person['last_name'] = last_name
+#     for k, v in add_info.items():
+#         person[k] = v
+#     return person
+#
+#
+# person1 = built_info('Vadim', 'Bardier', status='student', location='Minsk')
+# print(person1)
+
+# def make_sw(*args) -> None:
+#     print("Your sw consists of: ")
+#     for part in args:
+#         print('-' + part)
+#
+#
+# make_sw()
+# make_sw('bread', 'cheese', 'tomato')
+# make_sw('bread', 'meat')
+
+# def built_profile(first, last, **args):
+#     profile = {}
+#     profile['first_name'] = first
+#     profile['last_name'] = last
+#     for k, v in args.items():
+#         profile[k] = v
+#     return profile
+#
+#
+# print(built_profile('vadim', 'bardier', age=21))
