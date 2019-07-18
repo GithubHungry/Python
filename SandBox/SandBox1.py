@@ -952,8 +952,8 @@ from datetime import datetime
 # make_sw('bread', 'meat')
 
 # def built_profile(first, last, **args):
-#     profile = {}
 #     profile['first_name'] = first
+#     profile = {}
 #     profile['last_name'] = last
 #     for k, v in args.items():
 #         profile[k] = v
