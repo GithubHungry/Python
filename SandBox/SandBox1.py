@@ -1044,3 +1044,18 @@ from datetime import datetime
 # u2.describe_user()
 # u3.describe_user()
 # u4.describe_user()
+
+class Car():
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def description(self):
+        """return full description in normal type"""
+        full_desc = self.brand + ", " + self.model + ", " + str(self.year)
+        return full_desc
+
+
+c1 = Car('BMW', 'x6', 2018)
+print(c1.description())
