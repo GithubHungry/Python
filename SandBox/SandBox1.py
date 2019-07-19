@@ -961,3 +961,86 @@ from datetime import datetime
 #
 #
 # print(built_profile('vadim', 'bardier', age=21))
+
+
+# class Dog():
+#     """Класс создающий собаку"""
+#
+#     def __init__(self, name, age):
+#         """Иницифлизация атрибутов собаки"""
+#         self.name = name
+#         self.age = age
+#
+#     def sit(self):
+#         """Собака садится по команде"""
+#         print(self.name.title() + " is sitting now.")
+#
+#     def roll_over(self):
+#         """Собака перекатывается по команде"""
+#         print(self.name.title() + " rolled over.")
+#
+#
+# my_dog = Dog('Jojo', 8)
+# print("My dog`s name is: "+my_dog.name.title()+'.')
+# print("He is "+str(my_dog.age)+"-years old.")
+# my_dog.sit()
+# my_dog.roll_over()
+#
+# any_dog = Dog('Luci', 3)
+# print("Any dog`s name is: "+any_dog.name.title()+'.')
+# print("She is "+str(any_dog.age)+"-years old.")
+# any_dog.sit()
+# any_dog.roll_over()
+
+# class Restaurant():
+#     def __init__(self, name, cuisine):
+#         self.name = name
+#         self.cuisine = cuisine
+#
+#     def show_info(self):
+#         """Show information about restaurant"""
+#         print("This is a great restaurant : " + self.name.title() + " with " + self.cuisine + " cuisine.")
+#
+#     def work_time(self):
+#         """Print restaurant work time"""
+#         print(self.name.title() + " is work in format: 24/7")
+#
+#
+# amster = Restaurant('amsterdam', 'europe')
+# print("Name: " + amster.name + ", cuisine: " + amster.cuisine + ".")
+# amster.show_info()
+# amster.work_time()
+
+# class User():
+#     def __init__(self, first_name, last_name, **info):
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.info = {}
+#         for k, v in info.items():
+#             self.info[k] = v
+#
+#     def describe_user(self):
+#         """Describe current user"""
+#         full_name = self.first_name.title() + ' ' + self.last_name.title()
+#         print("User: " + full_name + ", additional information: ")
+#         for k, v in self.info.items():
+#             print("- " + k.title() + ": " + v.title())
+#         print("")
+#
+#     def greetings(self):
+#         """Приветствует пользователя"""
+#         print("Greetings, " + self.first_name + " " + self.last_name + " !")
+#
+#
+# u1 = User('vadim', 'bardier', location='Minsk')
+# u2 = User('oleg', 'cuprianov', location='Vitebsk')
+# u3 = User('egor', 'garbuz')
+# u4 = User('liza', 'novik', location='Mosty')
+# u1.greetings()
+# u2.greetings()
+# u3.greetings()
+# u4.greetings()
+# u1.describe_user()
+# u2.describe_user()
+# u3.describe_user()
+# u4.describe_user()
