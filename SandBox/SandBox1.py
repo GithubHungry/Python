@@ -1050,12 +1050,75 @@ class Car():
         self.brand = brand
         self.model = model
         self.year = year
+        self.odometr = 0
 
     def description(self):
         """return full description in normal type"""
         full_desc = self.brand + ", " + self.model + ", " + str(self.year)
         return full_desc
 
+    def show_odo(self):
+        print("This car has " + str(self.odometr) + " miles on it.")
+
+    def update_odometr(self, new_val):
+        self.odometr = new_val
+
+    def increment_odo(self, incr):
+        self.odometr += incr
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, year):
+        super().__init__(brand, model, year)
+        self.battery_size = 100
+
 
 c1 = Car('BMW', 'x6', 2018)
 print(c1.description())
+c1.show_odo()
+c1.update_odometr(21)
+c1.show_odo()
+c1.increment_odo(5)
+c1.show_odo()
+c2 = ElectricCar('Tesla', 'model s', 2016)
+print(c2.description())
+c2.show_odo()
+
+# class Restaurant():
+#     def __init__(self, name, cuisine):
+#         self.name = name
+#         self.cuisine = cuisine
+#         self.number_served = 0
+#
+#     def show_info(self):
+#         """Show information about restaurant"""
+#         print("This is a great restaurant : " + self.name.title() + " with " + self.cuisine + " cuisine.")
+#
+#     def work_time(self):
+#         """Print restaurant work time"""
+#         print(self.name.title() + " is work in format: 24/7")
+#
+#     def update_serv(self, new_val):
+#         """update atr mu,ber_served"""
+#         self.number_served = new_val
+#
+#     def increment_serv(self, incr_val):
+#         """Increment number_served"""
+#         self.number_served += incr_val
+#
+#     def show_num(self):
+#         """Show num_served value"""
+#         print(self.number_served)
+#
+#
+# amster = Restaurant('amsterdam', 'europe')
+# print("Name: " + amster.name + ", cuisine: " + amster.cuisine + ".")
+# amster.show_info()
+# amster.work_time()
+# print(amster.number_served)
+# amster.update_serv(21)
+# amster.show_num()
+# amster.number_served = 300
+# amster.show_num()
+# amster.increment_serv(1000)
+# amster.show_num()
