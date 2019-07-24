@@ -1023,8 +1023,11 @@ from datetime import datetime
 #         """Describe current user"""
 #         full_name = self.first_name.title() + ' ' + self.last_name.title()
 #         print("User: " + full_name + ", additional information: ")
-#         for k, v in self.info.items():
-#             print("- " + k.title() + ": " + v.title())
+#         if not self.info:
+#             print('No info')
+#         else:
+#             for k, v in self.info.items():
+#                 print("- " + k.title() + ": " + v.title())
 #         print("")
 #
 #     def greetings(self):
@@ -1032,6 +1035,29 @@ from datetime import datetime
 #         print("Greetings, " + self.first_name + " " + self.last_name + " !")
 #
 #
+# class Privileges():
+#     def __init__(self, *privileges):
+#         self.privileges = []
+#         for priv in privileges:
+#             self.privileges.append(priv)
+#
+#     def show_privileges(self):
+#         print("This user has privileges: ")
+#         for privelegue in self.privileges:
+#             print("- " + privelegue)
+#
+#
+# class Admin(User):
+#     def __init__(self, first_name, last_name):
+#         super().__init__(first_name, last_name)
+#         self.privileges = Privileges()
+#
+#
+# au1 = Admin('Vadim', 'Bardier')
+# au1.privileges.privileges = ['fuck you', 'del you', 'edit you']
+# au1.greetings()
+# au1.describe_user()
+# au1.privileges.show_privileges()
 # u1 = User('vadim', 'bardier', location='Minsk')
 # u2 = User('oleg', 'cuprianov', location='Vitebsk')
 # u3 = User('egor', 'garbuz')
@@ -1045,47 +1071,73 @@ from datetime import datetime
 # u3.describe_user()
 # u4.describe_user()
 
-class Car():
-    def __init__(self, brand, model, year):
-        self.brand = brand
-        self.model = model
-        self.year = year
-        self.odometr = 0
+# class Car():
+#     def __init__(self, brand, model, year):
+#         self.brand = brand
+#         self.model = model
+#         self.year = year
+#         self.odometr = 0
+#
+#     def description(self):
+#         """return full description in normal type"""
+#         full_desc = self.brand + ", " + self.model + ", " + str(self.year)
+#         return full_desc
+#
+#     def show_odo(self):
+#         print("This car has " + str(self.odometr) + " miles on it.")
+#
+#     def update_odometr(self, new_val):
+#         self.odometr = new_val
+#
+#     def increment_odo(self, incr):
+#         self.odometr += incr
+#
+#
+# class Battery():
+#     def __init__(self, battery_size=70):
+#         self.battery_size = battery_size
+#
+#     def describe_battery(self):
+#         print("This car has a " + str(self.battery_size) + "-kWh battery.")
+#
+#     def cap_of_battery(self, size):
+#         self.battery_size = size
+#
+#     def get_range(self):
+#         if self.battery_size < 70:
+#             range = 240
+#         else:
+#             range = 270
+#         message = "This car can gp approximately less than " + str(range) + " miles on a full charge"
+#         print(message)
+#
+#
+# class ElectricCar(Car):
+#     def __init__(self, brand, model, year):
+#         super().__init__(brand, model, year)
+#         self.battery = Battery()
 
-    def description(self):
-        """return full description in normal type"""
-        full_desc = self.brand + ", " + self.model + ", " + str(self.year)
-        return full_desc
 
-    def show_odo(self):
-        print("This car has " + str(self.odometr) + " miles on it.")
-
-    def update_odometr(self, new_val):
-        self.odometr = new_val
-
-    def increment_odo(self, incr):
-        self.odometr += incr
-
-
-class ElectricCar(Car):
-    def __init__(self, brand, model, year):
-        super().__init__(brand, model, year)
-        self.battery_size = 100
-
-
-c1 = Car('BMW', 'x6', 2018)
-print(c1.description())
-c1.show_odo()
-c1.update_odometr(21)
-c1.show_odo()
-c1.increment_odo(5)
-c1.show_odo()
-c2 = ElectricCar('Tesla', 'model s', 2016)
-print(c2.description())
-c2.show_odo()
+# c1 = Car('BMW', 'x6', 2018)
+# print(c1.description())
+# c1.show_odo()
+# c1.update_odometr(21)
+# c1.show_odo()
+# c1.increment_odo(5)
+# c1.show_odo()
+# c2 = ElectricCar('Tesla', 'model s', 2016)
+# print(c2.description())
+# c2.show_odo()
+# my_tesla = ElectricCar('Tesla', 'model s', 2020)
+# print(my_tesla.description())
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.get_range()
+# my_tesla.battery.cap_of_battery(50)
+# my_tesla.battery.battery_size = 21
+# my_tesla.battery.describe_battery()
 
 # class Restaurant():
-#     def __init__(self, name, cuisine):
+#     def __init__(self, name, cuisine='none'):
 #         self.name = name
 #         self.cuisine = cuisine
 #         self.number_served = 0
@@ -1111,6 +1163,19 @@ c2.show_odo()
 #         print(self.number_served)
 #
 #
+# class IceCreamStand(Restaurant):
+#     def __init__(self, name, *flavors):
+#         super().__init__(name)
+#         self.flavors = []
+#         for flavor in flavors:
+#             self.flavors.append(flavor)
+#
+#     def describe_stand(self):
+#         print("This stand: " + self.name + " has the following IceCreams:")
+#         for flavor in self.flavors:
+#             print("- " + flavor)
+
+
 # amster = Restaurant('amsterdam', 'europe')
 # print("Name: " + amster.name + ", cuisine: " + amster.cuisine + ".")
 # amster.show_info()
@@ -1122,3 +1187,6 @@ c2.show_odo()
 # amster.show_num()
 # amster.increment_serv(1000)
 # amster.show_num()
+# pinguins = IceCreamStand('33-pinguins', 'strawberry', 'apple', 'orange')
+# print(pinguins)
+# pinguins.describe_stand()
