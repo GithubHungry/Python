@@ -9,7 +9,6 @@ import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
 
-
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -1190,3 +1189,35 @@ from datetime import datetime
 # pinguins = IceCreamStand('33-pinguins', 'strawberry', 'apple', 'orange')
 # print(pinguins)
 # pinguins.describe_stand()
+
+# from collections import OrderedDict
+#
+# favorite_languages = OrderedDict()
+# favorite_languages['jen'] = 'python'
+# favorite_languages['sarah'] = 'c'
+# favorite_languages['edward'] = 'ruby'
+# favorite_languages['phil'] = 'python'
+# for k, v in favorite_languages.items():
+#     print(k + ": " + v)
+
+from random import randint
+
+
+class Die():
+    def __init__(self, sides=6):
+        self.sides = sides
+
+    def input_sides(self):
+        self.sides = int(input("Enter number of sides: "))
+        print("Now you figure has " + str(self.sides) + " sides.")
+
+    def roll_die(self):
+        x = randint(1, self.sides)
+        return x
+
+
+figure = Die()
+for i in range(10):
+    print(figure.roll_die())
+# six.input_sides()
+# print(six.roll_die())
