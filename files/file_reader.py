@@ -29,12 +29,14 @@
 #     # file_obj.write("Hi, yes,yes it`s me!")
 #     file_obj.write(str(1488))
 
-with open('pi_digits.txt', 'a') as file_obj:
-    while True:
-        current_name = input("Please, enter your name: ")
-        if current_name != 'Quit':
-            file_obj.write(current_name + '\n')
-            print('Success!')
-        else:
-            print('Bye!')
-            break
+# with open('pi_digits.txt', 'a') as file_obj:
+#     while True:
+#         current_name = input("Please, enter your name: ")
+#         if current_name != 'Quit':
+#             file_obj.write(current_name + '\n')
+#             print('Success!')
+#         else:
+#             print('Bye!')
+#             break
+
+

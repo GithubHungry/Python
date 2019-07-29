@@ -1200,24 +1200,42 @@ from datetime import datetime
 # for k, v in favorite_languages.items():
 #     print(k + ": " + v)
 
-from random import randint
-
-
-class Die():
-    def __init__(self, sides=6):
-        self.sides = sides
-
-    def input_sides(self):
-        self.sides = int(input("Enter number of sides: "))
-        print("Now you figure has " + str(self.sides) + " sides.")
-
-    def roll_die(self):
-        x = randint(1, self.sides)
-        return x
-
-
-figure = Die()
-for i in range(10):
-    print(figure.roll_die())
+# from random import randint
+#
+#
+# class Die():
+#     def __init__(self, sides=6):
+#         self.sides = sides
+#
+#     def input_sides(self):
+#         self.sides = int(input("Enter number of sides: "))
+#         print("Now you figure has " + str(self.sides) + " sides.")
+#
+#     def roll_die(self):
+#         x = randint(1, self.sides)
+#         return x
+#
+#
+# figure = Die()
+# for i in range(10):
+#     print(figure.roll_die())
 # six.input_sides()
 # print(six.roll_die())
+
+# try:
+#     print(5 / 0)
+# except ZeroDivisionError:
+#     print("You can`t divide by zero!")
+
+while True:
+    first_num = input('Enter first number: ')
+    if first_num == 'q':
+        break
+    second_num = input('Enter second number: ')
+    if second_num == 'q':
+        break
+    try:
+        print(int(first_num) / int(second_num))
+    except ZeroDivisionError:
+        print('Ты че, дебил?')
+        break
