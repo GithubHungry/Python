@@ -1,6 +1,7 @@
 import sys
 import pygame
 from projects.alien_invasion.bullet import Bullet
+from projects.alien_invasion.alien import Alien
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
@@ -10,8 +11,9 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
     elif event.key == pygame.K_LEFT:  # If we press left arrow
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
-        new_bullet = Bullet(ai_settings, screen, ship)
-        bullets.add(new_bullet)
+        fire_bullet(ai_settings, screen, ship, bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 
 def check_keyup_events(event, ship):
@@ -33,10 +35,50 @@ def check_events(ai_settings, screen, ship, bullets):
             check_keyup_events(event, ship)
 
 
-def update_screen(ai_settings, screen, ship, bullets):
+def update_screen(ai_settings, screen, ship, aliens, bullets):
     """Update images on the screen and show new screen."""
     screen.fill(ai_settings.bg_color)  # Filling game area, atr tuple or var only
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()  # draw new(old) ship, after filling, because we wanna ship on background
+    aliens.draw(screen)
     pygame.display.flip()  # This line update screen after each event
+
+
+def update_bullets(bullets):
+    """Update bullet position and delete old bullets."""
+    bullets.update()
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
+
+
+def fire_bullet(ai_settings, screen, ship, bullets):
+    """Create 1 bullet, if there is no max bullets."""
+    if len(bullets) < ai_settings.bullets_allowed:
+        new_bullet = Bullet(ai_settings, screen, ship)
+        bullets.add(new_bullet)
+
+
+def create_fleet(ai_settings, screen, aliens):
+    """Create alien fleet."""
+    alien = Alien(ai_settings, screen)
+    number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)
+    for alien_number in range(number_aliens_x):
+        create_alien(ai_settings, screen, aliens, alien_number)
+
+
+def get_number_aliens_x(ai_settings, alien_width):
+    """Count number of aliens in a row."""
+    available_space_x = ai_settings.screen_width - 2 * alien_width
+    number_aliens_x = int(available_space_x / (2 * alien_width))
+    return number_aliens_x
+
+
+def create_alien(ai_settings, screen, aliens, alien_number):
+    """Create an alien and put it in a row."""
+    alien = Alien(ai_settings, screen)
+    alien.width = alien.rect.width
+    alien.x = alien.width + 2 * alien.width * alien_number
+    alien.rect.x = alien.x
+    aliens.add(alien)
