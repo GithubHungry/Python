@@ -1,5 +1,6 @@
 import sys
 import pygame
+from time import sleep
 from projects.alien_invasion.bullet import Bullet
 from projects.alien_invasion.alien import Alien
 
@@ -16,6 +17,21 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         sys.exit()
 
 
+def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bullets, mouse_x, mouse_y):
+    """Start new game."""
+    button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
+    if button_clicked and not stats.game_active:
+        ai_settings.initialize_dynamic_settings()
+        pygame.mouse.set_visible(False)
+        if play_button.rect.collidepoint(mouse_x, mouse_y):
+            stats.reset_stats()
+            stats.game_active = True
+            aliens.empty()
+            bullets.empty()
+            create_fleet(ai_settings, screen, ship, aliens)
+            ship.center_ship()
+
+
 def check_keyup_events(event, ship):
     """Check keyup events."""
     if event.key == pygame.K_RIGHT:  # If we up right arrow
@@ -24,7 +40,7 @@ def check_keyup_events(event, ship):
         ship.moving_left = False
 
 
-def check_events(ai_settings, screen, ship, bullets):
+def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets):
     """Checkin events."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -33,15 +49,20 @@ def check_events(ai_settings, screen, ship, bullets):
             check_keydown_events(event, ai_settings, screen, ship, bullets)
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_x, mouse_y = pygame.mouse.get_pos()
+            check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bullets, mouse_x, mouse_y)
 
 
-def update_screen(ai_settings, screen, ship, aliens, bullets):
+def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
     """Update images on the screen and show new screen."""
     screen.fill(ai_settings.bg_color)  # Filling game area, atr tuple or var only
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()  # draw new(old) ship, after filling, because we wanna ship on background
     aliens.draw(screen)
+    if not stats.game_active:
+        play_button.draw_button()
     pygame.display.flip()  # This line update screen after each event
 
 
@@ -59,6 +80,7 @@ def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
     if len(aliens) == 0:
         bullets.empty()
+        ai_settings.increase_speed()
         create_fleet(ai_settings, screen, ship, aliens)
 
 
@@ -103,10 +125,13 @@ def get_number_rows(ai_settings, ship_height, alien_height):
     return number_rows
 
 
-def update_aliens(ai_settings, aliens):
+def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     """Update all aliens positions in fleet."""
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
+    if pygame.sprite.spritecollideany(ship, aliens):
+        ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+    check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets)
 
 
 def check_fleet_edges(ai_settings, aliens):
@@ -122,3 +147,26 @@ def change_fleet_direction(ai_settings, aliens):
     for alien in aliens.sprites():
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
+
+
+def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
+    """Collisions with ship."""
+    if stats.ships_left > 0:
+        stats.ships_left = -1
+        aliens.empty()
+        bullets.empty()
+        create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship()
+        sleep(0.5)
+    else:
+        stats.game_active = False
+        pygame.mouse.set_visible(True)
+
+
+def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
+    """Check collisions wint bottom screen and aliens."""
+    screen_rect = screen.get_rect()
+    for alien in aliens.sprites():
+        if alien.rect.bottom >= screen_rect.bottom:
+            ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+            break

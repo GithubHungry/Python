@@ -29,3 +29,7 @@ class Ship():
         if self.moving_left and self.rect.left > 0:  # while we press key, ship will move
             self.center -= self.ai_settings.ship_speed_factor
         self.rect.centerx = self.center
+
+    def center_ship(self):
+        """Put ship in the screen center."""
+        self.center = self.screen_rect.centerx
