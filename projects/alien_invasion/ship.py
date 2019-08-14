@@ -1,15 +1,17 @@
 import pygame
+from pygame.sprite import Sprite
 
 
-class Ship():
+class Ship(Sprite):
     """Class ship"""
 
     def __init__(self, screen, ai_settings):  # screen - obj on which will print ship
         """Initializing ship and his start coordinates"""
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
         self.image = pygame.image.load('images/ship.bmp')  # loading image of a ship, return area(ship)
-        self.image = pygame.transform.scale(self.image, (100, 100))
+        self.image = pygame.transform.scale(self.image, (50, 50))
         self.rect = self.image.get_rect()  # create rectangle for ship
         self.screen_rect = screen.get_rect()  # create window-rectangle
         self.rect.centerx = self.screen_rect.centerx  # put middle of ship to the middle of window
