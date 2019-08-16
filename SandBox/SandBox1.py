@@ -8,6 +8,7 @@ import pprint  # Библиотека, которая выводит струк�
 import SearchFunctionForVowels
 from threading import Thread
 from datetime import datetime
+import collections
 
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
@@ -1227,15 +1228,28 @@ from datetime import datetime
 # except ZeroDivisionError:
 #     print("You can`t divide by zero!")
 
-while True:
-    first_num = input('Enter first number: ')
-    if first_num == 'q':
-        break
-    second_num = input('Enter second number: ')
-    if second_num == 'q':
-        break
-    try:
-        print(int(first_num) / int(second_num))
-    except ZeroDivisionError:
-        print('Ты че, дебил?')
-        break
+# while True:
+#     first_num = input('Enter first number: ')
+#     if first_num == 'q':
+#         break
+#     second_num = input('Enter second number: ')
+#     if second_num == 'q':
+#         break
+#     try:
+#         print(int(first_num) / int(second_num))
+#     except ZeroDivisionError:
+#         print('Ты че, дебил?')
+#         break
+
+# q = collections.deque()
+# q.append(21)
+# q.appendleft(25)
+# q.appendleft(31)
+# print(q)
+# x = q.popleft()
+# print(x)
+# x = q.pop()
+# print(x)
+# for el in q:
+#     print(el)
+# print(q)
