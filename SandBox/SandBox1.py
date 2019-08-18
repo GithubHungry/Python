@@ -10,6 +10,7 @@ from threading import Thread
 from datetime import datetime
 import collections
 
+
 # print(sys.version) # Выводит варсию python (Библиотека sys)
 
 # print(os.getcwd())  # Выводит имя папки в контексте которой выполняется код (Библиотека os)
@@ -1253,3 +1254,17 @@ import collections
 # for el in q:
 #     print(el)
 # print(q)
+
+def qsort(list):
+    if list == []:
+        return []
+    else:
+        pivot = list[0]
+        lesser = qsort([x for x in list[1:] if x < pivot])
+        greater = qsort([x for x in list[1:] if x >= pivot])
+        return lesser + [pivot] + greater
+
+
+list1 = [1,1]
+list = [0, 0, 0, 1, 2, 3, 4, 10, 21, 21, 0, 5, 6]
+print(qsort(list1))
