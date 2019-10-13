@@ -84,7 +84,6 @@ def solution(students: list, rooms: list) -> list:
                     for key, val in dict_fio_id.items():
                         if elem == key:
                             v[index] = val
-
     return rooms
 
 
